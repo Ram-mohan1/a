@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="varma.css">
+    <title>Document</title>
+</head>
+<style>
+:root{
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary:#b6b6b6;
+    --text-secondary:#ececec;
+    --bg-primary:#23232e;
+    --bg-secondary:#141418;
+
+}
+
+body::-webkit-scrollbar{
+    width: 0.75rem;
+}
+body::-webkit-scrollbar-track{
+    background-color: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(120deg,violet,#1e1e24);
+}
+
+body{
+    color: rgb(236, 231, 231);
+    background-image: url('https://i.pinimg.com/474x/91/7b/4c/917b4cfa70f7a8abc39b45330da96d3a.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+.navbar{
+ 
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    height: 100%;
+}
+
+.nav-item{
+    width: 100%;
+    
+}
+
+.nav-item:last-child{
+    margin-top:auto;
+}
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 600ms ease;
+    padding: 0 1rem ;
+    
+    
+}
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    box-shadow: 8px 8px 8px 8px  black inset;
+}
+.nav-text{
+    font-size: 1.5rem;
+    display: none;
+    margin-left: 2rem;
+    
+}
+
+.article{
+    margin: 10px 10px; 
+}
+.articlep a{
+    text-decoration: none;
+    color: cornsilk;
+    font-size: 1.4rem;
+    border: 1px solid cornflowerblue;
+    padding: 5px 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.articlep a:hover{
+    background-color:cornflowerblue;
+    opacity: 0.5;
+}
+.articlep{
+    border:3px solid cornflowerblue;
+    font-weight: 500;
+    padding:5px 10px;
+    box-shadow: 5px 5px 10px 5px black;
+    transition: 0.3s ease;
+}
+.articlep:hover{
+    transform: scale(1.1,1.1);
+}
+
+.fas{
+    font-size: 2rem;
+    color: #ff7eee;
+    
+}
+.pk{
+    margin: 90px 0;
+    background-color: rgba(110, 107, 107, 0.514);
+    
+}
+.pk h1{
+    color: rgb(189, 182, 170);
+    font-size: 2.4rem;
+    margin: 2px auto;
+    text-align: center;
+}
+#box{
+    display: none;
+    padding-bottom: 10px;
+    width: 40vw;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #b6b6b6;
+    color: #23232e;
+    text-align: center;
+    box-shadow: 5px 5px 10px 5px black;
+}
+#box .fas{
+    margin-top: 10px;
+    color: #23232e;
+}
+.close{
+    
+    padding: 5px 10px;
+    background-color: rgba(255, 0, 0, 0.705);
+    cursor: pointer;
+    margin-bottom: 5px;
+
+}
+#p1{
+    display: none;
+    padding-bottom: 10px;
+    width: 80vw;
+    height: 95vh;
+    overflow-y : auto;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #b6b6b6;
+    color: #23232e;
+    text-align: center;
+    box-shadow: 5px 5px 10px 5px black;
+}
+.president{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+
+}
+.pre img{
+    border-radius: 8px;
+    width: 10vw;
+    height: 10vh;
+    
+}
+.pre,#jk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+@media only screen and (max-width:600px){
+    .navbar{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    .navbar-nav{
+        flex-direction: row;
+
+    }
+
+    .nav-link{
+        justify-content: center;
+    }
+    main{
+        margin: 5px;
+    }
+    .articlep{
+        margin: 10px 0px;
+    }
+    .article{
+        display: flex;
+        flex-direction: column;
+    }
+    .article{
+        margin-bottom: 100px;
+    }
+    
+    
+}
+
+@media only screen and (min-width:600px){
+    .navbar{
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover{
+        width: 16rem;
+    }
+    .navbar:hover .nav-text{
+        display: block;
+        
+    }
+    .article{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    
+    }
+    
+}
+
+</style>
+<body>
+    <div id="box">
+        <span class="fas fa-info-circle "></span>
+        <h1>help?</h1>
+        <p>This page exposes the top ten<br> in some great personalities, places and others </p>
+        <a onclick="pop()" class="close">close</a>
+    </div>
+    <div id="p1">
+        <div id="jk">
+            <h1 style="margin-left: 30%;">Top presidents</h1>
+            <a style="margin-left: auto;margin-right: 40%;" onclick="open1(1)" class="close">close</a>
+        </div>
+        <div class="president">
+            <div class="pre">
+                <div class="pj">
+                    <img src="https://i.pinimg.com/474x/fd/0b/c6/fd0bc6d2e9fbdc78076361788bdec187.jpg"  >
+                    <h2>Donald Trump</h2>
+                    <p>american president</p>
+                    Donald John Trump is the 45th and current president of the United States. Before entering politics, he was a businessman and television personality. 
+                </div>
+            </div>
+            <div class="pre">
+                <div class="pj">
+                    <img src="https://i.pinimg.com/474x/2a/e6/4d/2ae64d3c24988141901dd1d33c7ca5a8.jpg"  >
+                    <h2>Xi Jinping</h2>
+                    <p>General Secretary of the Cp of China</p>
+                    Xi Jinping is a Chinese politician who has served as General Secretary of the Communist Party of China and Chairman of the Central Military Commission since 2012, and President of the People's Republic of China since 2013.
+                </div>
+            </div>
+            <div class="pre">
+                <div class="pj">
+                    <img src="https://i.pinimg.com/474x/39/96/4e/39964e80f652277bcbe36636e1343877.jpg"  >
+                    <h2>Vladimir Putin</h2>
+                    <p>Russian President</p>
+                    Vladimir Vladimirovich Putin is a Russian politician and former intelligence officer who has served as President of Russia since 2012, previously holding the position from 1999 until 2008
+                </div>
+            </div>
+            <div class="pre">
+                <div class="pj">
+                    <img src="https://i.pinimg.com/474x/97/84/3d/97843ddb767d85ef2828b25440418701.jpg"  >
+                    <h2>Narendra Modi</h2>
+                    <p>Prime Minister of India</p>
+                    Narendra Damodardas Modi is an Indian politician serving as the 14th and current Prime Minister of India since 2014. He was the Chief Minister of Gujarat from 2001 to 2014.
+                </div>
+            </div>
+            <div class="pre">
+                <div class="pj">
+                    <img src="https://i.pinimg.com/474x/35/ae/da/35aedab1f6855943a366c96f8a7206d0.jpg"  >
+                    <h2>Shinzo Abe</h2>
+                    <p>Prime Minister of Japan</p>
+                    Shinzo Abe is a Japanese politician who has been the Prime Minister of Japan since 2012. Abe is also currently the president of the conservative Liberal Democratic Party.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="home.html" class="nav-link"><i class="fas fa-house-damage fa-2x"></i>
+                    <span class="nav-text">&nbsp;home</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="varma.html" class="nav-link"><i class="fas fa-list-ol fa-2x"></i>
+                    <span class="nav-text">top five</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="ex.html" class="nav-link"><i class="fas fa-comments fa-2x"></i>
+                    <span class="nav-text">feedback</span></a>
+            </li>
+            <li class="nav-item" onclick="pop()">
+                <a  class="nav-link"><i class="fas fa-info-circle fa-2x"></i>
+                    <span class="nav-text">help</span></a>
+            </li>
+            
+            
+        </ul>
+    </nav>
+    <main>
+        
+        <div class="pk">
+            <h1>The Top Five</h1>
+        </div>
+        <div class="article">
+            <div class="articlep" id="k">
+                <p><a class="mb" onclick="open1(1)" >top presidents</a></p>
+                <p> Legal requirements for presidential candidates have remained the same since the year Washington accepted the presidency. As directed by the Constitution, a presidential candidate must be a natural born citizen of their own country.
+                </p>
+            </div>
+            <div class="articlep" id="k">
+                <p><a class="mb" href="https://en.wikipedia.org/wiki/Army#:~:text=The%20current%20largest%20army%20in,troops%20and%20960%2C000%20reserve%20personnel" target="_blank"  >top armies</a></p>
+                <p> The army is the part of a country's military that fights on the ground. ... Soldiers do many things, from shooting enemies, to digging defensive trenches. They are used to defend their country, or attack another country's army.
+                </p>
+            </div>
+            <div class="articlep" id="k">
+                <p><a class="mb" href="https://www.businessinsider.in/defense/these-are-the-10-biggest-navies-in-the-world/articleshow/63734348.cms" target="_blank"  >top navies</a></p>
+                <p> The strategic offensive role of a navy is projection of force into areas beyond a country's shores (for example, to protect sea-lanes, deter or confront piracy, ferry troops, or attack other navies, ports, or shore installations).
+                </p>
+            </div>
+            <div class="articlep"  id="k">
+                <p><a class="mb" href="https://www.inpeaks.com/2017/10/05/top-10-movie-industries-world/" target="_blank"  >top movie makers</a></p>
+                <p> Hollywood is the world's oldest national film industry, and remains the largest in terms of box office gross revenue. ... The top three continents/regions by box office gross were: Asia-Pacific with US$14.9 billion, the U.S. and Canada ...
+                </p>
+            </div>
+            <div class="articlep"  id="k">
+                <p><a class="mb" href="https://www.hellotravel.com/stories/top-10-strongest-air-forces-of-world" target="_blank"  >top airforce</a></p>
+                <p> This is a small demonstration .pdf file -
+                    just for use in the Virtual Mechanics tutorials. More text. And more
+                    text. And more text. And more text. And more text.
+                </p>
+            </div>
+            
+            
+        </div>
+        
+        <script>
+            var c=0,p1=0;
+            function pop(){
+                if(c==0){
+                    document.getElementById("box").style.display = "block";
+                    c=1;
+                }
+                else{
+                    document.getElementById("box").style.display = "none";
+                    c=0;
+                }
+            }
+            function open1(ap){
+                if(ap==1){ 
+                    if(p1==0){
+                        
+                        document.getElementById("p1").style.display = "block";
+                        p1=1;
+                        
+                    }
+                    else{
+                        document.getElementById("p1").style.display = "none";
+                        p1=0;
+                    }
+                }
+            }
+        </script>
+
+        
+    </main>
+
+</body>
+</html>

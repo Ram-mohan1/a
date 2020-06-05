@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<style>
+:root{
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary:#b6b6b6;
+    --text-secondary:#ececec;
+    --bg-primary:#23232e;
+    --bg-secondary:#141418;
+
+}
+
+body::-webkit-scrollbar{
+    width: 0.75rem;
+}
+body::-webkit-scrollbar-track{
+    background-color: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(120deg,violet,#1e1e24);
+}
+
+body{
+    color: rgb(236, 231, 231);
+    background-image: url('https://i.pinimg.com/474x/91/7b/4c/917b4cfa70f7a8abc39b45330da96d3a.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+.navbar{
+ 
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    height: 100%;
+}
+
+.nav-item{
+    width: 100%;
+    
+}
+
+.nav-item:last-child{
+    margin-top:auto;
+}
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 600ms ease;
+    padding: 0 1rem ;
+    
+    
+}
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    box-shadow: 8px 8px 8px 8px  black inset;
+}
+.nav-text{
+    font-size: 1.5rem;
+    display: none;
+    margin-left: 2rem;
+    
+}
+
+.article{
+    margin: 10px 10px; 
+}
+.articlep a{
+    text-decoration: none;
+    color: cornsilk;
+    font-size: 1.4rem;
+    border: 1px solid cornflowerblue;
+    padding: 5px 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.articlep a:hover{
+    background-color:cornflowerblue;
+    opacity: 0.5;
+}
+.articlep{
+    border:3px solid cornflowerblue;
+    font-weight: 500;
+    padding:5px 10px;
+    box-shadow: 5px 5px 10px 5px black;
+    transition: 0.3s ease;
+}
+.articlep:hover{
+    transform: scale(1.1,1.1);
+}
+
+.fas{
+    font-size: 2rem;
+    color: #ff7eee;
+    
+}
+.wecan h1{
+    color: rgb(219, 176, 112);
+}
+.pk{
+    margin: 90px 0;
+    background-color: rgba(110, 107, 107, 0.514);
+    
+}
+.pk h1{
+    color: rgb(189, 182, 170);
+    font-size: 2.4rem;
+    margin: 2px auto;
+    text-align: center;
+}
+#box{
+    display: none;
+    padding-bottom: 10px;
+    width: 40vw;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #b6b6b6;
+    color: #23232e;
+    text-align: center;
+    box-shadow: 5px 5px 10px 5px black;
+}
+#box .fas{
+    margin-top: 10px;
+    color: #23232e;
+}
+.close{
+    
+    padding: 5px 10px;
+    background-color: rgba(255, 0, 0, 0.705);
+    cursor: pointer;
+    margin-bottom: 5px;
+
+}
+#p1{
+    display: none;
+    padding-bottom: 10px;
+    width: 80vw;
+    height: 95vh;
+    overflow-y : auto;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #b6b6b6;
+    color: #23232e;
+    text-align: center;
+    box-shadow: 5px 5px 10px 5px black;
+}
+.president{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+
+}
+.pre img{
+    border-radius: 8px;
+    width: 10vw;
+    height: 10vh;
+    
+}
+.pre,#jk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+@media only screen and (max-width:790px){
+    .navbar{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    #tj{
+        width: 69%;
+        height: 30%;
+    }
+    #qj{
+        width:8% ;
+        height:8% ;
+    }
+    .wecan{
+        font-size: 1.2rem;
+        margin-top: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .we{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .navbar-nav{
+        flex-direction: row;
+
+    }
+    
+    .nav-link{
+        justify-content: center;
+    }
+    main{
+        margin: 5px;
+    }
+    .articlep{
+        margin: 10px 0px;
+    }
+    .article{
+        display: flex;
+        flex-direction: column;
+    }
+    .article{
+        margin-bottom: 100px;
+    }
+    
+}
+
+@media only screen and (min-width:790px){
+    .navbar{
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover{
+        width: 16rem;
+    }
+    .navbar:hover .nav-text{
+        display: block;
+        
+    }
+    
+    #tj{
+        width: 50%;
+        height: 30%;
+    }
+    #qj{
+        width: 70px;
+        height: 70px;
+    }
+    .wecan{
+        font-size: 2.1rem;
+        margin-top: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .we{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .article{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    
+    }
+    
+}
+
+</style>
+<body>
+    <div id="box">
+        <span class="fas fa-info-circle "></span>
+        <h1>help?</h1>
+        <p>This page exposes the top five<br> in some great personalities, places and others </p>
+        <a onclick="pop()" class="close">close</a>
+    </div>
+    
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="home.html" class="nav-link"><i class="fas fa-house-damage fa-2x"></i>
+                    <span class="nav-text">&nbsp;home</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link"><i class="fas fa-list-ol fa-2x"></i>
+                    <span class="nav-text">top five</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="ex.html" class="nav-link"><i class="fas fa-comments fa-2x"></i>
+                    <span class="nav-text">feedback</span></a>
+            </li>
+            <li class="nav-item" onclick="pop()">
+                <a  class="nav-link"><i class="fas fa-info-circle fa-2x"></i>
+                    <span class="nav-text">help</span></a>
+            </li>
+            
+            
+        </ul>
+    </nav>
+    <main>
+        <div class="we">
+            <img src="https://media.giphy.com/media/3Cq8ICa99E7C0/giphy.gif" id="tj" alt="top 5 gif">
+        </div>
+        <div class="wecan">
+            <img src="https://i.gifer.com/7G0U.gif" id="qj" alt="5num">
+            <h1>&nbsp; welcome to top five</h1>
+        </div>
+        
+        <script>
+            var c=0,p1=0;
+            function pop(){
+                if(c==0){
+                    document.getElementById("box").style.display = "block";
+                    c=1;
+                }
+                else{
+                    document.getElementById("box").style.display = "none";
+                    c=0;
+                }
+            }
+            function open1(ap){
+                if(ap==1){ 
+                    if(p1==0){
+                        
+                        document.getElementById("p1").style.display = "block";
+                        p1=1;
+                        
+                    }
+                    else{
+                        document.getElementById("p1").style.display = "none";
+                        p1=0;
+                    }
+                }
+            }
+        </script>
+
+        
+    </main>
+
+</body>
+</html>
